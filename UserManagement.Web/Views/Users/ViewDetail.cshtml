@@ -1,0 +1,42 @@
+@model UserManagement.Web.Models.Users.UserListItemViewModel
+@ViewData.ModelMetadata.PropertyName
+
+@using (Html.BeginForm("ViewDetail", "Users", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="row">
+        <div class="col-6">
+            <form class="form-horizontal" method="post" action="/ViewDetail" role="form">
+                <div class="mb-4">
+                    <label for="Id">Id</label>
+                    @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @disabled= "disabled" }})
+                </div>
+                <div class="mb-4">
+                    <label for="Forename">Forename</label>
+                    @Html.EditorFor(model => model.Forename, new { htmlAttributes = new { @disabled= "disabled" }})
+                </div>
+                <div class="mb-4">
+                    <label for="Surname">Surname</label>
+                    @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @disabled= "disabled" }})
+                </div>
+                <div class="mb-4">
+                    <label for="Email">Email</label>
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @disabled= "disabled" }})
+                </div>
+                <div class="mb-4">
+                    <label for="IsActive">Active</label>
+                    @Html.CheckBoxFor(model => model.IsActive, new { htmlAttributes = new { @disabled= "disabled" }})
+                </div>
+                <div class="mb-4">
+                    <label for="DateOfBirth">Date Of Birth</label>
+                    @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @disabled= "disabled" }})
+                </div>
+                <div class="float-end">
+                    <input type="submit" class="btn btn-default" value="Exit">
+                </div>
+            </form>
+        </div>
+        <div class="col-6">
+        </div>
+    </div>
+}
+
